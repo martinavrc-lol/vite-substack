@@ -1,0 +1,150 @@
+/* =================== VARIABLES =================== */
+
+:root {
+  font-size : 100%;
+  font-family : var(--font-body);
+  scroll-behavior : smooth;
+
+  /* --- tema claro (day) --- */
+  --color-bg: #faf7f2;              /* fondo de la pagina */
+  --color-surface: #ffffff;         /* fondo de tarjetas y formularios */
+  --color-text: #1f1b16;            /* texto principal */
+  --color-muted: #6b6258;           /* texto secundario */
+  --color-accent: #c2410c;          /* acento: botones y enlaces */
+  --color-accent-dark: #9a3412;     /* acento al pasar el raton */
+  --color-on-accent: #ffffff;       /* texto sobre el acento */
+  --color-border: #e7e0d6;          /* bordes y separadores */
+  --color-danger: #b91c1c;          /* errores y boton de borrar */
+  --color-tag-bg: #f3ede4;          /* fondo de las etiquetas */
+  --color-tag-bg-hover: #ead9c4;    /* etiqueta al pasar el raton */
+
+  /* --- tipografias --- */
+  --font-title: 'Lora', Georgia, serif;           /* titulos */
+  --font-body: 'Inter', system-ui, sans-serif;    /* texto y interfaz */
+
+  /* --- medidas --- */
+  --radius: 10px;                   /* redondeo de tarjetas y formularios */
+  --gutter: 1rem;                   /* margen lateral de la pagina */
+  --sidebar: 232px;                 /* ancho de la barra lateral */
+
+  color-scheme: light;
+}
+
+/* --- tema oscuro (night) --- */
+[data-theme="dark"] {
+  --color-bg: #141210;
+  --color-surface: #1e1a17;
+  --color-text: #f4efe9;
+  --color-muted: #a89f94;
+  --color-accent: #e2673a;
+  --color-accent-dark: #f0835c;
+  --color-on-accent: #141210;
+  --color-border: #2e2924;
+  --color-danger: #f87171;
+  --color-tag-bg: #2a251f;
+  --color-tag-bg-hover: #383028;
+
+  color-scheme: dark;
+}
+
+/* --------------- RESPONSIVE VARIABLES --------------- */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar: 200px;
+  }
+}
+
+/* =================== RESET =================== */
+
+* , *::before , *::after {
+  margin : 0;
+  padding : 0;
+  border : 0;
+  box-sizing : border-box;
+  vertical-align : baseline;
+}
+*::before , *::after {
+  display : block;
+}
+img , picture , video , iframe , figure , canvas {
+  max-width : 100%;
+  display : block;
+  width : 100%;
+  height : initial;
+  object-fit : cover;
+  object-position : center center;
+}
+a {
+  display : block;
+  text-decoration : none;
+  color : inherit;
+  font :  inherit;
+}
+p a {
+  display : inline;
+}
+li , menu, summary {
+  list-style-type : none;
+}
+ol {
+  counter-reset : revert;
+}
+
+h1{
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-family: var(--font-title);
+  line-height: 1.25;
+  font-weight: 400;
+}
+h2 , h3 , h4 , h5 , h6 , p , span , a , strong , blockquote , i , b , u , em , pre , code , mark , del {
+  font :  inherit;
+  line-height :  1em;
+  text-decoration :  none;
+  color : inherit;
+  overflow-wrap : break-word;
+  text-wrap : pretty;
+}
+mark {
+  background-color : transparent;
+}
+blockquote::before , blockquote::after , q::before , q::after {
+  content : none;
+}
+form , input , textarea , select , button , label {
+  font :  inherit;
+  hyphens : auto;
+  background-color : transparent;
+  color : inherit;
+  display : block;
+  appearance : none;
+}
+fieldset {
+  border : none;
+}
+::placeholder {
+  color : unset;
+}
+button , label {
+  cursor : pointer;
+}
+table , tr , td , th , tbody , thead , tfoot {
+  border-collapse : collapse;
+  border-spacing : 0;
+  font : inherit;
+}
+svg {
+  width : 100%;
+  height : initial;
+  display : block;
+  fill : currentColor;
+}
+body {
+  min-height : 100vh;
+  line-height : 1.5em;
+  background-color : var(--color-bg);
+  color : var(--color-text);
+  hyphens : auto;
+  font-smooth : always;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing : grayscale;
+}

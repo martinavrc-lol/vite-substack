@@ -1,0 +1,1137 @@
+/* ===== Layout ===== */
+#root {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+.Header-main{
+    display: flex;
+    flex-flow: row;
+    flex: 1;
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+    padding: 2.5rem var(--gutter) 4rem;
+    display: flex;
+    flex-flow: column;
+}
+
+.Main-content {
+    flex: 1;
+}
+
+/* --------------- RESPONSIVE LAYOUT --------------- */
+@media (max-width: 1024px) {
+    main {
+        padding: 2rem var(--gutter) 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .Header-main {
+        flex-flow: column;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1.5rem var(--gutter) 2.5rem;
+    }
+}
+
+/* ===== Cabecera ===== */
+.Header {
+    width: var(--sidebar);
+    height: 100vh;
+    background: var(--color-surface);
+    border-right: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    flex-shrink: 0;
+}
+
+.Header-inner {
+    height: 100%;
+    max-width: 1080px;
+    margin: auto;
+    padding: 2rem var(--gutter);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Header-up {
+    display: flex;
+    flex-flow: column;
+    gap: 2rem;
+}
+
+.Header-icons{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Header-logo {
+    font-family: var(--font-title);
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--color-accent);
+}
+
+.Header-icon{
+    width: 10%;
+}
+
+.Header-nav {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    flex-flow: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.Header-nav a,
+.Header-nav button {
+    text-decoration: none;
+    color: var(--color-muted);
+    font-weight: 500;
+    padding: .25rem 0;
+    border-bottom: 2px solid transparent;
+}
+
+.Header-nav a:hover,
+.Header-nav a.active,
+.Header-nav button:hover {
+    color: var(--color-text);
+    border-bottom-color: var(--color-accent);
+}
+
+.Header-actions {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+}
+
+.Header-theme {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    color: var(--color-muted);
+    transition: background .15s, color .15s;
+}
+
+.Header-theme:hover {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.Header-theme svg {
+    width: 18px;
+    height: 18px;
+}
+
+.Header-burger {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    color: var(--color-muted);
+    transition: background .15s, color .15s;
+}
+
+.Header-burger:hover {
+    background: var(--color-bg);
+    color: var(--color-text);
+}
+
+.Header-burger svg {
+    width: 18px;
+    height: 18px;
+}
+
+.Header-sign{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Header-user {
+    color: var(--color-muted);
+    font-size: .9rem;
+}
+
+/* --------------- RESPONSIVE CABECERA --------------- */
+@media (max-width: 1024px) {
+    .Header-inner {
+        padding: 1.5rem var(--gutter);
+    }
+}
+
+@media (max-width: 768px) {
+    .Header {
+        width: 100%;
+        height: auto;
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .Header-inner {
+        padding: 1rem var(--gutter);
+        gap: 1rem;
+    }
+
+    .Header-burger {
+        display: inline-flex;
+    }
+
+    .Header-nav,
+    .Header-actions {
+        display: none;
+        width: 100%;
+    }
+
+    .Header-nav.isOpen,
+    .Header-actions.isOpen {
+        display: flex;
+    }
+
+    .Header-actions.isOpen {
+        padding-top: 1rem;
+        border-top: 1px solid var(--color-border);
+    }
+}
+
+/* ===== Botones (compartidos) ===== */
+.Button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border: 1px solid var(--color-accent);
+    padding: .55rem 1.1rem;
+    border-radius: 2rem;
+    font-weight: 500;
+}
+
+.Button-inline{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.Button-onclick{
+    color: var(--color-muted);
+}
+
+.Button:hover {
+    background: var(--color-accent-dark);
+    border-color: var(--color-accent-dark);
+}
+
+.Button-ghost {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+.Button-ghost:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
+}
+
+.Button-danger {
+    background: transparent;
+    color: var(--color-danger);
+    border-color: var(--color-danger);
+}
+
+.Button-danger:hover {
+    background: var(--color-danger);
+    border-color: var(--color-danger);
+    color: var(--color-on-accent);
+}
+
+.Button-ghost.strech{
+    width: 100%;
+}
+
+.Button-writer {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: .5rem;
+    padding: .5rem 2rem;
+    font-weight: 500;
+}
+
+.Button.Follow{
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: 14px;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border: 1px solid var(--color-accent);
+    padding: .55rem 1.1rem;
+    border-radius: .5rem;
+    font-weight: 500;
+}
+
+.Button-ghost.Follow{
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border);
+}
+
+/* ===== Paginas ===== */
+/* Posts (/): listado publico */
+
+.Post {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.Post-header {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.Post-h1 {
+    font-family: var(--font-title);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.Post-error {
+    color: var(--color-danger);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.Post-list {
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+}
+
+/* PostDetail (/posts/:id): detalle de un post */
+
+.PostDetail {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.PostDetail-header {
+    margin-bottom: 2rem;
+}
+
+.PostDetail-h1 {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.PostDetail-meta {
+    color: var(--color-muted);
+    font-size: .95rem;
+    margin-bottom: 1rem;
+}
+
+.PostDetail-body {
+    font-family: var(--font-title);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    margin-bottom: 2rem;
+}
+
+.PostDetail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    margin-bottom: 2rem;
+}
+
+.PostDetail-tag {
+    background: var(--color-tag-bg);
+    color: var(--color-accent-dark);
+    border-radius: 999px;
+    padding: .2rem .75rem;
+    font-size: .85rem;
+}
+
+.PostDetail-footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border);
+}
+
+.PostDetail-back {
+    display: inline-block;
+    color: var(--color-accent);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.PostDetail-back:hover {
+    text-decoration: underline;
+}
+
+.PostDetail-error {
+    color: var(--color-danger);
+    font-weight: 500;
+}
+
+.PostDetail-loading {
+    color: var(--color-muted);
+}
+
+/* --------------- RESPONSIVE POSTDETAIL --------------- */
+@media (max-width: 600px) {
+    .PostDetail-body {
+        font-size: 1.05rem;
+    }
+}
+
+/* Feed (/feed): posts de a quien sigo */
+
+.Feed {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.Feed-header {
+    margin-bottom: 2rem;
+}
+
+.Feed-h1 {
+    font-family: var(--font-title);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.Feed-error {
+    color: var(--color-danger);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.Feed-empty {
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+}
+
+.Feed-list {
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+}
+
+/* Dashboard (/dashboard): mis posts */
+
+.Dashboard {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.Dashboard-header {
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.Dashboard-h1 {
+    font-family: var(--font-title);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.Dashboard-button {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    padding: .55rem 1.1rem;
+    font-weight: 500;
+    transition: background .15s;
+}
+
+.Dashboard-button:hover {
+    background: var(--color-accent-dark);
+}
+
+.Dashboard-error {
+    color: var(--color-danger);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.Dashboard-loading,
+.Dashboard-empty {
+    color: var(--color-muted);
+}
+
+
+.Dashboard-list {
+    display: flex;
+    flex-flow: column;
+    gap: .75rem;
+}
+
+.Dashboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+}
+
+.Dashboard-info a {
+    font-family: var(--font-title);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.Dashboard-info a:hover {
+    color: var(--color-accent);
+}
+
+.Dashboard-info p {
+    color: var(--color-muted);
+    font-size: .9rem;
+    margin-top: .25rem;
+}
+
+.Dashboard-actions {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.Dashboard-edit {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: .45rem 1rem;
+    font-weight: 500;
+    transition: background .15s, border-color .15s;
+}
+
+.Dashboard-edit:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
+}
+
+.Dashboard-delete {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-danger);
+    padding: .45rem 1rem;
+    font-weight: 500;
+}
+
+
+/* Following (/following): gente que ya segui */
+
+.Following {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.Following-header {
+    margin-bottom: 2rem;
+}
+
+.Following-h1 {
+    font-family: var(--font-title);
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.Following-error {
+    color: var(--color-danger);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.Following-empty {
+    color: var(--color-muted);
+    margin-bottom: 1rem;
+}
+
+.Following-list {
+    display: flex;
+    flex-flow: column;
+    gap: 1rem;
+}
+
+.Following-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-radius: var(--radius);
+
+}
+
+.Following-profile {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.Following-info {
+    min-width: 0;
+    flex: 1;
+}
+
+.Following-name {
+    font-family: var(--font-title);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.Following-bio {
+    color: var(--color-muted);
+    margin-top: .25rem;
+    max-width: 48ch;
+}
+
+.Following-unfollow {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: .5rem 1.1rem;
+    font-weight: 500;
+    transition: background .15s, border-color .15s;
+}
+
+.Following-unfollow:hover {
+    background: var(--color-bg);
+    border-color: var(--color-text);
+}
+
+/* Profile (/users/:id): perfil publico de un usuario */
+
+.Profile {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.Profile-header {
+    display: flex;
+    flex-flow: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.Profile-header .Avatar {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+}
+
+.Profile-info {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Profile-name {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.Profile-bio {
+    color: var(--color-muted);
+    margin-top: .25rem;
+}
+
+.Profile-follows{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.Profile-error,
+.Profile-loading {
+    color: var(--color-muted);
+}
+
+.Profile-posts {
+    margin-bottom: 2rem;
+}
+
+.Profile-heading {
+    font-family: var(--font-title);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding-bottom: .5rem;
+}
+
+.Profile-bar {
+    height: 1px;
+    width: 100%;
+    background: var(--color-tag-bg-hover);
+    border-top: 1px solid var(--color-tag-bg-hover);
+}
+
+.Profile-list {
+    display: flex;
+    flex-flow: column;
+    gap: 1.25rem;
+}
+
+/* Register (/register): formulario de registro */
+
+.Register {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.Register-form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 2rem 1.5rem;
+    display: grid;
+    gap: 1.25rem;
+}
+
+.Register-h1 {
+    font-family: var(--font-title);
+    font-size: 1.9rem;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.Register-field {
+    display: grid;
+    gap: .4rem;
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.Register-error {
+    color: var(--color-danger);
+    font-weight: 500;
+}
+
+.Register-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    padding: .6rem 1.1rem;
+    font-weight: 500;
+    transition: background .15s;
+}
+
+.Register-submit:hover {
+    background: var(--color-accent-dark);
+}
+
+.Register-hint {
+    color: var(--color-muted);
+    font-size: .95rem;
+}
+
+.Register-hint-link {
+    display: inline;
+    cursor: pointer;
+    color: var(--color-accent);
+    font-weight: 500;
+}
+
+.Register-hint-link:hover {
+    text-decoration: underline;
+}
+
+/* ===== Tarjetas de posts (compartidas) ===== */
+.Postcard {
+    padding: 1rem;
+    transition: border-color .15s;
+}
+
+.Postcard:hover {
+    border-color: var(--color-muted);
+}
+
+.Postcard:not(:last-child) {
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+.Postcard-note .Postcard-excerpt {
+    font-size: 1.05rem;
+    margin-bottom: 0;
+}
+
+.Postcard > .Button {
+    margin-top: 1rem;
+}
+
+.Postcard-metas{
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.Postcard-pfp{
+    display: flex;
+    flex-flow: row;
+    gap: .7rem;
+    justify-content: start;
+    align-items: center;
+}
+
+.Postcard-name {
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+.Postcard-time {
+    color: var(--color-muted);
+    font-size: .85rem;
+    margin-top: 1rem;
+}
+
+.Postcard-title {
+    font-family: var(--font-title);
+    font-size: 1.35rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: .5rem;
+}
+
+.Postcard-cover-link {
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.Postcard-cover {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: var(--color-bg);
+}
+
+.Postcard-title a {
+    text-decoration: none;
+    color: var(--color-text);
+}
+
+.Postcard-title a:hover {
+    color: var(--color-accent);
+}
+
+.Postcard-excerpt {
+    color: var(--color-muted);
+    margin-bottom: .9rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.Postcard-tumbnail{
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+.Postcard-sub{
+    padding: 0 1rem 1rem;
+}
+
+/* --------------- RESPONSIVE POSTCARD --------------- */
+@media (max-width: 600px) {
+    .Postcard-cover {
+        aspect-ratio: 4 / 3;
+    }
+}
+
+.Tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.Tag {
+    color: var(--color-accent-dark);
+    font-size: .85rem;
+}
+
+button.Tag {
+    cursor: pointer;
+}
+
+button.Tag:hover {
+    background: var(--color-tag-bg-hover);
+}
+
+/* ===== Formularios ===== */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: .65rem .8rem;
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    transition: border-color .15s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+.Form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.Form-wide {
+    margin-bottom: 2rem;
+}
+
+.Form h1 {
+    font-family: var(--font-title);
+    font-size: 1.7rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.Form label {
+    display: grid;
+    gap: .3rem;
+    font-weight: 500;
+    font-size: .95rem;
+}
+
+.Form textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.Form-actions {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.Form-hint {
+    color: var(--color-muted);
+    font-size: .95rem;
+}
+
+.Form-hint a {
+    color: var(--color-accent);
+}
+
+/* ===== Estados (compartidos por los dialogs) ===== */
+.Status {
+    color: var(--color-muted);
+    padding: .5rem 0;
+}
+
+.Status-error {
+    color: var(--color-danger);
+    font-weight: 500;
+}
+
+/* ===== Dialogs ===== */
+.Dialog-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--gutter);
+    z-index: 10;
+}
+
+.Dialog-box {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--color-surface);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.Dialog-box .Form {
+    border: none;
+    padding: 0;
+}
+
+.Dialog-close {
+    position: absolute;
+    top: .75rem;
+    right: .75rem;
+    background: none;
+    border: none;
+    color: var(--color-muted);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.Dialog-close:hover {
+    color: var(--color-text);
+}
+
+/* --------------- RESPONSIVE FORM Y DIALOGS --------------- */
+@media (max-width: 600px) {
+    .Dialog-box {
+        padding: 1.25rem;
+    }
+
+    .Form {
+        padding: 1.25rem;
+    }
+}
+
+/* ===== Avatar (compartido) ===== */
+.Avatar {
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 999px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.Avatar-fallback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: .95rem;
+}
+
+/* ===== Pie ===== */
+.Footer {
+    margin-top: 3rem;
+}
+
+.Footer-line {
+    margin: 1.5rem auto;
+    width: 80%;
+    border-top: 1px solid var(--color-border);
+}
+
+.Footer-text {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--color-muted);
+    font-size: .8rem;
+    text-align: center;
+}
+
+
