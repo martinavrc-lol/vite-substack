@@ -197,6 +197,7 @@ main {
     }
 
     .Header-inner {
+        height: auto;
         padding: 1rem var(--gutter);
         gap: 1rem;
     }
